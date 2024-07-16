@@ -1,12 +1,17 @@
 * {
   box-sizing: border-box;
   --theme-blue-solid: #0d89ec;
-  --theme-blue-light: rgb(33, 153, 243);
+  --theme-blue-light: #2199f3;
 }
 body {
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
+}
+.logo-wrapper-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
 }
 .header {
   background-color: #fff;
