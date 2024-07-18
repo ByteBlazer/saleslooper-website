@@ -29,10 +29,7 @@ p {
   margin: 0;
   padding: 0;
 }
-.double-slash:after {
-  content: " //";
-  color: var(--theme-blue-solid);
-}
+
 .no-wrap {
   white-space: nowrap;
 }
