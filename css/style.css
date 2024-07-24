@@ -98,7 +98,7 @@ section {
   justify-content: center;
   align-items: center;
   gap: 2.5vw;
-  padding-top: 8vw;
+  padding-top: 6vw;
   width: 100%;
   max-width: var(--body-max-width);
 }
@@ -115,7 +115,7 @@ section {
   font-size: 1.06rem;
   line-height: 1.375;
   color: var(--text-secondary);
-  max-width: 55vw;
+  max-width: 60vw;
 }
 #banner-section .banner-section-inner-container .banner-text-container h2 {
   text-transform: capitalize;
@@ -162,6 +162,13 @@ section {
   }
 }
 @media (min-width: 768px) {
+  .banner-section-inner-container {
+    padding-top: 4vw;
+  }
+  #banner-section .banner-section-inner-container .banner-text-container {
+    gap: 2vw;
+  }
+
   #banner-section .banner-section-inner-container .banner-text-container h2 {
     font-size: 3rem;
     letter-spacing: -2px;
@@ -174,5 +181,8 @@ section {
   }
   #banner-section .banner-section-inner-container .banner-text-container {
     text-align: left;
+  }
+  #banner-section .banner-section-inner-container .banner-text-container h1 {
+    align-self: flex-start;
   }
 }
