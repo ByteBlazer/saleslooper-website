@@ -134,19 +134,39 @@ nav ul li:hover {
   align-items: center;
   gap: 2vw;
 }
-.action-button {
-  display: none;
+.action-button,
+.outline-button {
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.8rem 1.6rem;
   border-radius: 0.4rem;
-  border: none;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   width: 100%;
+  max-width: 15rem;
+}
+.action-button {
+  border: none;
   background-color: var(--theme-color-bold);
   color: #fff;
+}
+.outline-button {
+  border: none;
+  background-color: var(--theme-color-bold);
+  color: #fff;
+}
+
+.header-demo-booking-button {
+  display: none;
+}
+.banner-demo-booking-button {
+  padding: 0.9rem 3.5rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}
+.watch-video-button {
 }
 .hamburger {
   display: flex;
@@ -247,6 +267,15 @@ section {
   line-height: 1.5;
   color: var(--text-secondary);
 }
+.banner-button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2.5vw;
+  padding: 3vw;
+}
 
 .banner-image-container {
   width: 80vw;
@@ -272,7 +301,7 @@ section {
   :root {
     --header-height: 75px;
   }
-  .action-button {
+  .header-demo-booking-button {
     display: flex;
   }
 
@@ -294,6 +323,9 @@ section {
   nav ul li {
     display: block;
   }
+  .banner-button-group {
+    flex-direction: row;
+  }
 
   .hamburger {
     display: none;
@@ -301,6 +333,11 @@ section {
   .banner-section-inner-container {
     flex-direction: row;
   }
+  .banner-button-group {
+    justify-content: flex-start;
+    padding: 0;
+  }
+
   .banner-text-container {
     text-align: left;
   }
