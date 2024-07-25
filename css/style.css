@@ -1,6 +1,7 @@
 :root {
   --theme-color-bold: #0d89ec;
   --theme-color-light: #2199f3;
+  --theme-color-ultra-light: #cae6f7;
   --text-secondary: #202124;
   --text-primary: #111827;
   --text-nav: rgba(17, 24, 39, 0.8);
@@ -151,6 +152,14 @@ nav ul li:hover {
   border: none;
   background-color: var(--theme-color-bold);
   color: #fff;
+}
+.action-button:hover {
+  background-color: var(--theme-color-light);
+  transition: background-color 0.3s ease;
+}
+.outline-button:hover {
+  background-color: var(--theme-color-ultra-light);
+  transition: background-color 0.3s ease;
 }
 .outline-button {
   border-color: var(--theme-color-bold);
