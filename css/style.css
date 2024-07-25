@@ -83,7 +83,7 @@ header {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 2vw;
+  padding: 3vw;
 }
 .icon-text-logo-container {
   display: flex;
@@ -132,7 +132,7 @@ nav ul li:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1vw;
+  gap: 2vw;
 }
 .action-button {
   display: none;
