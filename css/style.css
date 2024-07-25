@@ -1,12 +1,13 @@
 :root {
-  --button-bold: #0d89ec;
-  --button-light: #2199f3;
+  --theme-color-bold: #0d89ec;
+  --theme-color-light: #2199f3;
   --text-secondary: #202124;
   --text-primary: #111827;
+  --text-nav: rgba(17, 24, 39, 0.8);
   --background-light-shade: #eaf4fa;
   --header-bottom-border-color: #dbeceb;
   --background-default: white;
-  --background-header: yellow;
+  --background-header: white;
   --text-gradient-start: #00c6ff;
   --text-gradient-end: #004aad;
   --header-height: 60px;
@@ -16,6 +17,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
   -webkit-text-size-adjust: 100%; /* Prevents font size changes on mobile devices */
 }
 html {
@@ -69,6 +71,60 @@ header {
   height: var(--header-height);
   border-bottom: 1px solid var(--header-bottom-border-color);
   background-color: var(--background-header);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2vw;
+}
+.icon-text-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.icon-container,
+.text-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-container img {
+  height: calc(0.5 * var(--header-height));
+}
+.text-logo-container img {
+  height: calc(0.4 * var(--header-height));
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+nav ul li {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-nav);
+  font-size: 1rem;
+}
+nav ul li:hover {
+  color: var(--theme-color-bold);
 }
 main {
   color: var(--text-primary);
@@ -84,11 +140,11 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2vw 0 2vw;
+  padding: 2vw 2vw 2vw 2vw;
   width: 100%;
 }
 #banner-section {
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height) + 2vw);
   background-color: var(--background-light-shade);
 }
 
@@ -160,11 +216,16 @@ section {
   :root {
     --header-height: 75px;
   }
+
+  #banner-section {
+    padding-top: calc(var(--header-height) + 1vw);
+  }
 }
 @media (min-width: 768px) {
-  .banner-section-inner-container {
-    padding-top: 4vw;
+  section {
+    width: 100%;
   }
+
   #banner-section .banner-section-inner-container .banner-text-container {
     gap: 2vw;
   }
