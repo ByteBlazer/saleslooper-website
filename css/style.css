@@ -161,13 +161,13 @@ nav ul li:hover {
 .header-demo-booking-button {
   display: none;
 }
-.banner-demo-booking-button {
+.banner-demo-booking-button,
+.watch-video-button {
   padding: 0.9rem 3.5rem;
   border-radius: 0.4rem;
   font-size: 1rem;
 }
-.watch-video-button {
-}
+
 .hamburger {
   display: flex;
   flex-direction: column;
