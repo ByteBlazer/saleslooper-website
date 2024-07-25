@@ -145,7 +145,7 @@ section {
   width: 100%;
 }
 #banner-section {
-  padding-top: calc(var(--header-height) + 2vw);
+  padding-top: calc(var(--header-height) + 5vw);
   background-color: var(--background-light-shade);
 }
 
@@ -155,7 +155,6 @@ section {
   justify-content: center;
   align-items: center;
   gap: 2.5vw;
-  padding-top: 6vw;
   width: 100%;
   max-width: var(--body-max-width);
 }
@@ -216,10 +215,6 @@ section {
 @media (min-width: 576px) {
   :root {
     --header-height: 75px;
-  }
-
-  #banner-section {
-    padding-top: calc(var(--header-height) + 1vw);
   }
 }
 @media (min-width: 768px) {
