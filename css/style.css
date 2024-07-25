@@ -158,7 +158,7 @@ section {
   width: 100%;
   max-width: var(--body-max-width);
 }
-#banner-section .banner-section-inner-container .banner-text-container {
+.banner-text-container {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -166,43 +166,24 @@ section {
   align-items: center;
   gap: 3vw;
 }
-#banner-section .banner-section-inner-container .banner-text-container h1 {
+.banner-text-container h1 {
   font-weight: 400;
   font-size: 1.06rem;
   line-height: 1.375;
   color: var(--text-secondary);
   max-width: 60vw;
 }
-#banner-section .banner-section-inner-container .banner-text-container h2 {
+.banner-text-container h2 {
   text-transform: capitalize;
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 1.17;
   color: var(--text-primary);
 }
-#banner-section .banner-section-inner-container .banner-text-container p {
-  font-weight: 400;
-  font-size: 1.07rem;
-  line-height: 1.5;
-  color: var(--text-secondary);
+.non-breaking-title {
+  white-space: nowrap;
 }
-
-#banner-section .banner-section-inner-container .banner-image-container {
-  width: 80vw;
-  max-width: 500px;
-  border-radius: 0.75vw;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#banner-section .banner-section-inner-container .banner-image-container img {
-  width: 100%;
-  height: auto;
-}
-
-.standout-phrase-text-gradient {
+.product-title {
   background: linear-gradient(
     90deg,
     var(--text-gradient-start),
@@ -212,9 +193,35 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.banner-text-container p {
+  font-weight: 400;
+  font-size: 1.07rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.banner-image-container {
+  width: 80vw;
+  max-width: 500px;
+  border-radius: 0.75vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image-container img {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: 576px) {
   :root {
     --header-height: 75px;
+  }
+  .product-title {
+    white-space: nowrap;
   }
 }
 @media (min-width: 768px) {
@@ -222,11 +229,11 @@ section {
     width: 100%;
   }
 
-  #banner-section .banner-section-inner-container .banner-text-container {
+  .banner-text-container {
     gap: 2vw;
   }
 
-  #banner-section .banner-section-inner-container .banner-text-container h2 {
+  .banner-text-container h2 {
     font-size: 3rem;
     letter-spacing: -2px;
     line-height: 1.2;
@@ -236,13 +243,13 @@ section {
   nav ul li {
     display: block;
   }
-  #banner-section .banner-section-inner-container {
+  .banner-section-inner-container {
     flex-direction: row;
   }
-  #banner-section .banner-section-inner-container .banner-text-container {
+  .banner-text-container {
     text-align: left;
   }
-  #banner-section .banner-section-inner-container .banner-text-container h1 {
+  .banner-text-container h1 {
     align-self: flex-start;
   }
 }
