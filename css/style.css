@@ -127,6 +127,13 @@ nav ul li {
 nav ul li:hover {
   color: var(--theme-color-bold);
 }
+.header-button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
 .action-button {
   display: none;
   align-items: center;
@@ -140,6 +147,31 @@ nav ul li:hover {
   width: 100%;
   background-color: var(--theme-color-bold);
   color: #fff;
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  background-color: var(--text-nav);
+  height: 2px;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger.change .bar1 {
+  transform: rotate(45deg) translate(6.5px, 6.5px);
+}
+
+.hamburger.change .bar2 {
+  opacity: 0;
+}
+
+.hamburger.change .bar3 {
+  transform: rotate(-45deg) translate(6.5px, -6.5px);
 }
 
 main {
@@ -232,14 +264,18 @@ section {
 }
 
 @media (min-width: 576px) {
-  :root {
-    --header-height: 75px;
-  }
   .product-title {
     white-space: nowrap;
   }
 }
 @media (min-width: 768px) {
+  :root {
+    --header-height: 75px;
+  }
+  .action-button {
+    display: flex;
+  }
+
   section {
     width: 100%;
   }
@@ -258,8 +294,9 @@ section {
   nav ul li {
     display: block;
   }
-  .action-button {
-    display: flex;
+
+  .hamburger {
+    display: none;
   }
   .banner-section-inner-container {
     flex-direction: row;
