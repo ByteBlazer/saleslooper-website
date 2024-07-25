@@ -153,19 +153,25 @@ nav ul li:hover {
   color: #fff;
 }
 .outline-button {
-  border: none;
-  background-color: var(--theme-color-bold);
-  color: #fff;
+  border-color: var(--theme-color-bold);
+  border-width: 1px;
+  background-color: transparent;
+  color: var(--text-nav);
 }
 
 .header-demo-booking-button {
   display: none;
 }
 .banner-demo-booking-button,
-.watch-video-button {
+.banner-watch-video-button {
+  max-width: 17rem;
   padding: 0.9rem 3.5rem;
   border-radius: 0.4rem;
   font-size: 1rem;
+}
+.banner-watch-video-button:before {
+  content: url(/img/play-icon-inside-button.svg);
+  margin-right: 1.2rem;
 }
 
 .hamburger {
