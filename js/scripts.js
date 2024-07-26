@@ -25,7 +25,7 @@ function playVideo() {
 }
 
 function setupObserver() {
-  var options = {
+  const options = {
     root: null,
     rootMargin: "0px",
     threshold: 0.5,
@@ -40,7 +40,7 @@ function setupObserver() {
     });
   }, options);
 
-  var videoSection = document.getElementById("video-section");
+  const videoSection = document.getElementById("video-section");
   if (videoSection) {
     videoObserver.observe(videoSection);
   } else {
@@ -51,7 +51,7 @@ function setupObserver() {
 // Reload observer when the page becomes visible again
 document.addEventListener("visibilitychange", function () {
   if (document.visibilityState === "visible" && videoObserver) {
-    var videoSection = document.getElementById("video-section");
+    const videoSection = document.getElementById("video-section");
     if (videoSection) {
       videoObserver.observe(videoSection);
     }
@@ -60,22 +60,16 @@ document.addEventListener("visibilitychange", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load the IFrame Player API code asynchronously
-  var tag = document.createElement("script");
+  const tag = document.createElement("script");
   tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName("script")[0];
+  const firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // Modal interaction
-  var modal = document.getElementById("modal");
-  var closeModalBtn = document.getElementById("close-modal");
+  const modal = document.getElementById("modal");
+  const closeModalBtn = document.getElementById("close-modal");
 
-  // Check if the modal has been shown before
-  if (!localStorage.getItem("modalShown")) {
-    modal.style.display = "block";
-  } else {
-    modal.style.display = "none";
-    setupObserver(); // Set up the observer immediately if the modal was shown before
-  }
+  modal.style.display = "block";
 
   closeModalBtn.onclick = function () {
     modal.style.display = "none";
