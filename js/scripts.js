@@ -2,11 +2,12 @@ function toggleHamburger(x) {
   x.classList.toggle("change");
 }
 
-var player;
-var videoObserver;
+let player;
+let videoObserver;
+const videoUrl = "https://www.youtube.com/embed/J6I0YVHO-hs?enablejsapi=1";
 
 function onYouTubeIframeAPIReady() {
-  var iframe = document.getElementById("youtube-video");
+  const iframe = document.getElementById("youtube-video");
   player = new YT.Player(iframe, {
     events: {
       onReady: function (event) {
@@ -69,7 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const closeModalBtn = document.getElementById("close-modal");
 
-  modal.style.display = "block";
+  // Check if the modal has been shown before
+  if (!localStorage.getItem("modalShown")) {
+    document.getElementById("youtube-video").src = videoUrl; // Autoplay non-muted video for first-time users
+    modal.style.display = "block";
+  } else {
+    document.getElementById("youtube-video").src = videoUrl + "&mute=1"; // Autoplay muted video for repeat visitors
+    setupObserver(); // Set up the observer immediately if the modal was shown before
+  }
 
   closeModalBtn.onclick = function () {
     modal.style.display = "none";
