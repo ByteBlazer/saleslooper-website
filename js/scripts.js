@@ -5,18 +5,23 @@ function toggleHamburger(x) {
 var player;
 var videoObserver;
 
-// This function is called by the YouTube IFrame API once it's ready
 function onYouTubeIframeAPIReady() {
   var iframe = document.getElementById("youtube-video");
-  player = new YT.Player(iframe);
-
-  // Now that the API is ready, set up the IntersectionObserver
-  setupObserver();
+  player = new YT.Player(iframe, {
+    events: {
+      onReady: function (event) {
+        setupObserver();
+      },
+    },
+  });
 }
 
 function playVideo() {
   if (player && player.playVideo) {
+    console.log("inside if");
     player.playVideo();
+  } else {
+    console.error("Player is not ready or playVideo is not defined.");
   }
 }
 
