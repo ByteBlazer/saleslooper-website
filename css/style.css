@@ -307,6 +307,19 @@ section {
   height: auto;
 }
 
+#video-section {
+  padding-top: 20px;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80vw;
+}
+
 @media (min-width: 576px) {
   .product-title {
     white-space: nowrap;
