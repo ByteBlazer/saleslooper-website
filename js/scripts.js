@@ -1,25 +1,33 @@
 function toggleHamburger(x) {
   x.classList.toggle("change");
 }
-function playVideo() {
+
+var player;
+var videoObserver;
+
+// This function is called by the YouTube IFrame API once it's ready
+function onYouTubeIframeAPIReady() {
   var iframe = document.getElementById("youtube-video");
-  var player = new YT.Player(iframe, {
-    events: {
-      onReady: function (event) {
-        event.target.playVideo();
-      },
-    },
-  });
+  player = new YT.Player(iframe);
+
+  // Now that the API is ready, set up the IntersectionObserver
+  setupObserver();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function playVideo() {
+  if (player && player.playVideo) {
+    player.playVideo();
+  }
+}
+
+function setupObserver() {
   var options = {
     root: null,
     rootMargin: "0px",
     threshold: 0.5,
   };
 
-  var observer = new IntersectionObserver(function (entries, observer) {
+  videoObserver = new IntersectionObserver(function (entries, observer) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         playVideo();
@@ -29,11 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }, options);
 
   var videoSection = document.getElementById("video-section");
-  observer.observe(videoSection);
-});
+  if (videoSection) {
+    videoObserver.observe(videoSection);
+  } else {
+    console.error("Element with ID 'video-section' not found.");
+  }
+}
 
-// Load the IFrame Player API code asynchronously.
-var tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+document.addEventListener("DOMContentLoaded", function () {
+  // Load the IFrame Player API code asynchronously
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
