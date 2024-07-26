@@ -20,7 +20,7 @@ function playVideo() {
   if (player) {
     player.playVideo();
   } else {
-    console.error("Player is not ready or   playVideo is not defined.");
+    console.error("Player is not ready.");
   }
 }
 
@@ -64,4 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Modal interaction
+  var modal = document.getElementById("modal");
+  var closeModalBtn = document.getElementById("close-modal");
+
+  // Check if the modal has been shown before
+  if (!localStorage.getItem("modalShown")) {
+    modal.style.display = "block";
+  } else {
+    modal.style.display = "none";
+    setupObserver(); // Set up the observer immediately if the modal was shown before
+  }
+
+  closeModalBtn.onclick = function () {
+    modal.style.display = "none";
+    localStorage.setItem("modalShown", "true"); // Set the flag in localStorage
+    setupObserver(); // Set up the observer after the user interacts
+  };
 });

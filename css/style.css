@@ -371,3 +371,44 @@ section {
     align-self: flex-start;
   }
 }
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--header-bottom-border-color);
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+  background-color: var(
+    --background-default
+  ); /* Use your theme's background color */
+}
+
+.modal-content h2 {
+  color: var(--text-primary); /* Use your theme's text color */
+}
+
+.modal-content p {
+  color: var(--text-secondary); /* Use your theme's secondary text color */
+}
+
+.flag-icon {
+  width: 50px; /* Adjust size as needed */
+  margin: 10px 0;
+}
