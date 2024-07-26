@@ -17,11 +17,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 function playVideo() {
-  if (player && player.playVideo) {
-    console.log("inside if");
+  if (player) {
     player.playVideo();
   } else {
-    console.error("Player is not ready or playVideo is not defined.");
+    console.error("Player is not ready or   playVideo is not defined.");
   }
 }
 
@@ -48,6 +47,16 @@ function setupObserver() {
     console.error("Element with ID 'video-section' not found.");
   }
 }
+
+// Reload observer when the page becomes visible again
+document.addEventListener("visibilitychange", function () {
+  if (document.visibilityState === "visible" && videoObserver) {
+    var videoSection = document.getElementById("video-section");
+    if (videoSection) {
+      videoObserver.observe(videoSection);
+    }
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   // Load the IFrame Player API code asynchronously
