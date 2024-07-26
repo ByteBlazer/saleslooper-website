@@ -72,9 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Check if the modal has been shown before
   if (!localStorage.getItem("modalShown")) {
-    document.getElementById("youtube-video").src = videoUrl; // Autoplay non-muted video for first-time users
-    modal.style.display = "block";
+    document.getElementById("youtube-video").src = videoUrl + "&mute=0"; // Autoplay non-muted video for first-time users
+    modal.style.display = "flex";
   } else {
+    modal.style.display = "none";
     document.getElementById("youtube-video").src = videoUrl + "&mute=1"; // Autoplay muted video for repeat visitors
     setupObserver(); // Set up the observer immediately if the modal was shown before
   }
