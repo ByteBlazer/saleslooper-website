@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // Modal interaction
-  const modal = document.getElementById("modal");
-  const closeModalBtn = document.getElementById("close-modal");
+  const modal = document.getElementById("country-modal");
+  const closeModalBtn = document.getElementById("close-country-modal");
 
   // Check if the modal has been shown before
-  if (!localStorage.getItem("modalShown")) {
+  if (!localStorage.getItem("countryModalShown")) {
     document.getElementById("youtube-video").src = videoUrl + "&mute=0"; // Autoplay non-muted video for first-time users
     modal.style.display = "flex";
   } else {
@@ -113,14 +113,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeModalBtn.onclick = function () {
     modal.style.display = "none";
-    localStorage.setItem("modalShown", "true"); // Set the flag in localStorage
+    localStorage.setItem("countryModalShown", "true"); // Set the flag in localStorage
     setupObserver(); // Set up the observer after the user interacts
   };
 
   // Watch Overview button interaction
-  var watchOverviewBtn = document.getElementById("watch-overview-button");
+  const watchOverviewBtn = document.getElementById("watch-overview-button");
   watchOverviewBtn.onclick = function () {
     unmuteAndPlayVideo();
     scrollToVideo();
   };
+
+  // Book Free Demo button interaction
+  const bookFreeDemoBtnList =
+    document.getElementsByClassName("demo-modal-opener");
+  const demoModal = document.getElementById("demo-modal");
+
+  const closeDemoModal = document.getElementById("close-demo-modal");
+  closeDemoModal.onclick = function () {
+    demoModal.style.display = "none";
+  };
+
+  for (let i = 0; i < bookFreeDemoBtnList.length; i++) {
+    const bookFreeDemoButton = bookFreeDemoBtnList[i];
+    bookFreeDemoButton.onclick = function () {
+      const modal = document.getElementById("demo-modal");
+      modal.style.display = "flex";
+    };
+  }
 });

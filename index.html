@@ -17,7 +17,7 @@
   </head>
   <body>
     <script src="js/scripts.js" defer></script>
-    <div id="modal" class="modal">
+    <div id="country-modal" class="modal">
       <div class="modal-content">
         <p>You are currently viewing our India website.</p>
         <img
@@ -26,8 +26,33 @@
           alt="India Flag"
           class="flag-icon"
         />
-        <button id="close-modal" class="action-button modal-button">
+        <button id="close-country-modal" class="action-button modal-button">
           Continue
+        </button>
+      </div>
+    </div>
+    <div id="demo-modal" class="modal">
+      <div class="modal-content">
+        <p>To schedule a demo, please give us a call on:</p>
+        <!-- If changing number, please do it for the 'href' as well -->
+        <a href="tel:+916282727002">
+          <div class="phone-email-link">
+            <img src="img/phone-call-icon.svg" height="20px" width="20px" />
+            <p>(+91) 6282727002</p>
+          </div>
+        </a>
+        <p>or email us at:</p>
+        <!-- If changing email, please do it for the 'href' as well -->
+        <a
+          href="mailto:contact@saleslooper.com?subject=Schedule%20a%20Demo&body=I%20would%20like%20to%20schedule%20a%20demo.%20My%20phone%20number%20is%20XXXXX%20XXXXX."
+        >
+          <div class="phone-email-link">
+            <img src="img/email-icon.svg" height="20px" width="20px" />
+            <p>contact@saleslooper.com</p>
+          </div>
+        </a>
+        <button id="close-demo-modal" class="action-button modal-button">
+          OK
         </button>
       </div>
     </div>
@@ -54,7 +79,9 @@
         </div>
 
         <div class="header-button-group">
-          <button class="action-button header-demo-booking-button">
+          <button
+            class="action-button header-demo-booking-button demo-modal-opener"
+          >
             Book Free Demo
           </button>
           <div class="hamburger" onclick="toggleHamburger(this)">
@@ -85,7 +112,9 @@
               Salesmen Tracking, Financial Ledgers, Stock Tracking and more.
             </p>
             <div class="banner-button-group">
-              <button class="action-button banner-demo-booking-button">
+              <button
+                class="action-button banner-demo-booking-button demo-modal-opener"
+              >
                 Book Free Demo
               </button>
               <button
