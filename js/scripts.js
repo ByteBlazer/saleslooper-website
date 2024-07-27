@@ -24,6 +24,37 @@ function playVideo() {
     console.error("Player is not ready.");
   }
 }
+function scrollToVideo() {
+  const videoSection = document.getElementById("video-section");
+  if (videoSection) {
+    const viewportHeight = window.innerHeight;
+    const videoSectionTop =
+      videoSection.getBoundingClientRect().top + window.scrollY;
+    const videoSectionHeight = videoSection.offsetHeight;
+    const topPosition =
+      videoSectionTop - (viewportHeight - videoSectionHeight) / 2;
+    window.scrollTo({
+      top: topPosition,
+      behavior: "smooth",
+    });
+  } else {
+    console.error("Element with ID 'video-section' not found.");
+  }
+}
+
+function unmuteAndPlayVideo() {
+  if (
+    player &&
+    typeof player.unMute === "function" &&
+    typeof player.playVideo === "function"
+  ) {
+    player.unMute();
+    player.seekTo(0);
+    player.playVideo();
+  } else {
+    console.error("Player is not ready or unMute/playVideo is not defined.");
+  }
+}
 
 function setupObserver() {
   const options = {
@@ -84,5 +115,12 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.display = "none";
     localStorage.setItem("modalShown", "true"); // Set the flag in localStorage
     setupObserver(); // Set up the observer after the user interacts
+  };
+
+  // Watch Overview button interaction
+  var watchOverviewBtn = document.getElementById("watch-overview-button");
+  watchOverviewBtn.onclick = function () {
+    unmuteAndPlayVideo();
+    scrollToVideo();
   };
 });
