@@ -350,8 +350,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1vw;
-  padding: 2.5vw;
+  gap: 1rem;
+  padding: 2.5rem;
   border-radius: var(--modal-window-border-radius);
   box-shadow: 0 0.25vw 0.25vw rgba(0, 0, 0, 0.3); /* Shad ow */
   text-align: center;
