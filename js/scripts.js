@@ -155,6 +155,19 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToVideo();
   };
 
+  // Pricing FAQ interaction
+  const pricingFaqBtn = document.getElementById("pricing-faq-button");
+  const closePricingFaqModal = document.getElementById(
+    "close-pricing-faq-modal"
+  );
+  const pricingFaqModal = document.getElementById("pricing-faq-modal");
+  pricingFaqBtn.onclick = function () {
+    pricingFaqModal.style.display = "flex";
+  };
+  closePricingFaqModal.onclick = function () {
+    pricingFaqModal.style.display = "none";
+  };
+
   // Book Free Demo button interaction
   const bookFreeDemoBtnList =
     document.getElementsByClassName("demo-modal-opener");

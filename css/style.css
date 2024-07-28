@@ -18,6 +18,7 @@
   --pricing-plan-border-radius: 10px;
   --banner-image-border-radius: 12px;
   --modal-window-max-width: 350px;
+  --pricing-modal-window-max-width: 800px;
 }
 * {
   box-sizing: border-box;
@@ -470,6 +471,45 @@ section {
   margin-right: 0.5rem;
   font-weight: 600;
 }
+.pricing-faq-section {
+  padding-top: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+  padding-bottom: 2vh;
+}
+.pricing-faq-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.modal-content.pricing-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2vh;
+}
+.faq-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.faq-modal-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-self: flex-start;
+  text-align: left;
+}
+.faq-question {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.faq-answer {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
 
 /* Modal styles */
 .modal {
@@ -502,6 +542,9 @@ section {
   border-radius: var(--modal-window-border-radius);
   box-shadow: 0 0.25vw 0.25vw rgba(0, 0, 0, 0.3); /* Shad ow */
   text-align: center;
+}
+#pricing-faq-modal .modal-content {
+  max-width: var(--pricing-modal-window-max-width);
 }
 .modal-button {
   max-width: 8rem;
