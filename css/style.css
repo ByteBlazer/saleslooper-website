@@ -296,7 +296,8 @@ section {
 }
 
 #video-section {
-  padding-top: 10vw;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
 }
 .video-outer-wrapper {
   display: flex;
@@ -338,11 +339,16 @@ section {
 }
 
 #pricing-section {
-  padding-top: 6vw;
+  padding-top: 6vh;
   background-color: var(--background-light-shade);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.pricing-section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 4vh;
 }
 .pricing-section-inner-container {
   display: flex;
