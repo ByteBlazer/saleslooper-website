@@ -544,6 +544,7 @@ section {
   text-align: center;
 }
 #pricing-faq-modal .modal-content {
+  width: 90vw;
   max-width: var(--pricing-modal-window-max-width);
 }
 .modal-button {
