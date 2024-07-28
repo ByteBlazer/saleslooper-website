@@ -132,14 +132,7 @@ nav ul li:hover {
   background-color: var(--theme-color-bold);
   color: #fff;
 }
-.action-button:hover {
-  background-color: var(--theme-color-light);
-  transition: background-color 0.1s ease;
-}
-.outline-button:hover {
-  background-color: var(--theme-color-ultra-light);
-  transition: background-color 0.1s ease;
-}
+
 .outline-button {
   border-color: var(--theme-color-bold);
   border-width: 1px;
@@ -623,5 +616,14 @@ section {
   }
   .banner-text-container h1 {
     align-self: flex-start;
+  }
+  /* Hovering is not needed for touch devices */
+  .action-button:hover {
+    background-color: var(--theme-color-light);
+    transition: background-color 0.3s ease;
+  }
+  .outline-button:hover {
+    background-color: var(--theme-color-ultra-light);
+    transition: background-color 0.3s ease;
   }
 }
