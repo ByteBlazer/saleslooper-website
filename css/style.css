@@ -446,7 +446,7 @@ section {
 .pricing-plan-feature::before {
   content: "✓";
   color: var(--theme-color-bold);
-  margin-right: 0.35rem;
+  margin-right: 0.3rem;
   font-weight: 600;
 }
 .pricing-faq-section {
