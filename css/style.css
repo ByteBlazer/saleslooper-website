@@ -411,6 +411,10 @@ section {
   font-size: 0.8rem;
   font-weight: 500;
 }
+.pricing-plan-users-special {
+  padding-bottom: 1.5vw;
+  font-size: 1rem;
+}
 .pricing-plan-cost {
   color: var(--text-primary);
   font-size: 2rem;
