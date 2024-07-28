@@ -1,22 +1,25 @@
+// Function to toggle the hamburger menu icon to an "X" and vice versa
 function toggleHamburger(x) {
   x.classList.toggle("change");
 }
 
-let player;
-let videoObserver;
-const videoUrl = "https://www.youtube.com/embed/J6I0YVHO-hs?enablejsapi=1";
+let player; // YouTube player object
+let videoObserver; // Intersection observer for video auto-play
+const videoUrl = "https://www.youtube.com/embed/J6I0YVHO-hs?enablejsapi=1"; // YouTube video URL with API enabled
 
+// Function called when the YouTube IFrame API is ready
 function onYouTubeIframeAPIReady() {
   const iframe = document.getElementById("youtube-video");
   player = new YT.Player(iframe, {
     events: {
       onReady: function (event) {
-        setupObserver();
+        setupObserver(); // Setup intersection observer when player is ready
       },
     },
   });
 }
 
+// Function to play the video
 function playVideo() {
   if (player) {
     player.playVideo();
@@ -25,6 +28,7 @@ function playVideo() {
   }
 }
 
+// Function to scroll to the video section
 function scrollToVideo() {
   const videoHeadingElement = document.getElementById("youtube-video-heading");
   if (videoHeadingElement) {
@@ -39,6 +43,7 @@ function scrollToVideo() {
   }
 }
 
+// Function to unmute and play the video
 function unmuteAndPlayVideo() {
   if (
     player &&
@@ -53,6 +58,7 @@ function unmuteAndPlayVideo() {
   }
 }
 
+// Function to setup an intersection observer for auto-playing the video
 function setupObserver() {
   const options = {
     root: null,
@@ -87,13 +93,12 @@ document.addEventListener("visibilitychange", function () {
   }
 });
 
-// Function to get country using IP Geolocation
+// Function to get the user's country using IP Geolocation
 function getCountryFromIP() {
-  fetch("https://ipinfo.io/json?token=efd71ebb4072bd")
+  fetch("https://ipinfo.io/json?token=YOUR_IPINFO_TOKEN")
     .then((response) => response.json())
     .then((data) => {
       const country = data.country;
-      console.log("User's Country from IP:", country);
       handleCountrySpecificLogic(country);
     })
     .catch((error) => console.error("Error fetching country from IP:", error));
@@ -119,6 +124,29 @@ function handleCountrySpecificLogic(country) {
   });
 }
 
+// Function to open a modal and disable scrolling
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
+  } else {
+    console.error(`Modal with ID '${modalId}' not found.`);
+  }
+}
+
+// Function to close a modal and enable scrolling
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = "none";
+    document.body.classList.remove("no-scroll");
+  } else {
+    console.error(`Modal with ID '${modalId}' not found.`);
+  }
+}
+
+// Event listener for DOM content loaded
 document.addEventListener("DOMContentLoaded", function () {
   getCountryFromIP();
 
@@ -128,61 +156,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // Modal interaction
-  const modal = document.getElementById("country-modal");
-  const closeModalBtn = document.getElementById("close-country-modal");
+  const closeCountryModalBtn = document.getElementById("close-country-modal");
 
   // Check if the modal has been shown before
   if (!localStorage.getItem("countryModalShown")) {
-    document.getElementById("youtube-video").src = videoUrl + "&mute=0"; // Autoplay non-muted video for first-time users
-    modal.style.display = "flex";
+    document.getElementById("youtube-video").src = videoUrl + "&mute=0";
+    openModal("country-modal");
   } else {
-    modal.style.display = "none";
-    document.getElementById("youtube-video").src = videoUrl + "&mute=1"; // Autoplay muted video for repeat visitors
-    setupObserver(); // Set up the observer immediately if the modal was shown before
+    closeModal("country-modal");
+    document.getElementById("youtube-video").src = videoUrl + "&mute=1";
+    setupObserver();
   }
 
-  closeModalBtn.onclick = function () {
-    modal.style.display = "none";
-    localStorage.setItem("countryModalShown", "true"); // Set the flag in localStorage
-    setupObserver(); // Set up the observer after the user interacts
+  closeCountryModalBtn.onclick = function () {
+    closeModal("country-modal");
+    localStorage.setItem("countryModalShown", "true");
+    setupObserver();
   };
 
-  // Watch Overview button interaction
   const watchOverviewBtn = document.getElementById("watch-overview-button");
   watchOverviewBtn.onclick = function () {
     unmuteAndPlayVideo();
     scrollToVideo();
   };
 
-  // Pricing FAQ interaction
   const pricingFaqBtn = document.getElementById("pricing-faq-button");
   const closePricingFaqModal = document.getElementById(
     "close-pricing-faq-modal"
   );
-  const pricingFaqModal = document.getElementById("pricing-faq-modal");
+
   pricingFaqBtn.onclick = function () {
-    pricingFaqModal.style.display = "flex";
+    openModal("pricing-faq-modal");
   };
   closePricingFaqModal.onclick = function () {
-    pricingFaqModal.style.display = "none";
+    closeModal("pricing-faq-modal");
   };
 
-  // Book Free Demo button interaction
   const bookFreeDemoBtnList =
     document.getElementsByClassName("demo-modal-opener");
-  const demoModal = document.getElementById("demo-modal");
 
   const closeDemoModal = document.getElementById("close-demo-modal");
   closeDemoModal.onclick = function () {
-    demoModal.style.display = "none";
+    closeModal("demo-modal");
   };
 
   for (let i = 0; i < bookFreeDemoBtnList.length; i++) {
     const bookFreeDemoButton = bookFreeDemoBtnList[i];
     bookFreeDemoButton.onclick = function () {
-      const modal = document.getElementById("demo-modal");
-      modal.style.display = "flex";
+      openModal("demo-modal");
     };
   }
 });
