@@ -441,12 +441,12 @@ section {
 }
 .pricing-plan-features {
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .pricing-plan-feature::before {
   content: "✓";
   color: var(--theme-color-bold);
-  margin-right: 0.5rem;
+  margin-right: 0.35rem;
   font-weight: 600;
 }
 .pricing-faq-section {
