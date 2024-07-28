@@ -26,20 +26,16 @@ function playVideo() {
 }
 
 function scrollToVideo() {
-  const videoSection = document.getElementById("youtube-video-container");
-  if (videoSection) {
-    const viewportHeight = window.innerHeight;
-    const videoSectionTop =
-      videoSection.getBoundingClientRect().top + window.scrollY;
-    const videoSectionHeight = videoSection.offsetHeight;
-    const bottomPosition =
-      videoSectionTop - viewportHeight + videoSectionHeight;
+  const videoHeadingElement = document.getElementById("youtube-video-heading");
+  if (videoHeadingElement) {
+    const videoHeadingTop =
+      videoHeadingElement.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
-      top: bottomPosition + 10,
+      top: videoHeadingTop - 75,
       behavior: "smooth",
     });
   } else {
-    console.error("Element with ID 'youtube-video-container' not found.");
+    console.error("Element with ID 'youtube-video-heading' not found.");
   }
 }
 
