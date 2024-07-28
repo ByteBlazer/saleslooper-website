@@ -95,7 +95,7 @@ document.addEventListener("visibilitychange", function () {
 
 // Function to get the user's country using IP Geolocation
 function getCountryFromIP() {
-  fetch("https://ipinfo.io/json?token=YOUR_IPINFO_TOKEN")
+  fetch("https://ipinfo.io/json?token=efd71ebb4072bd")
     .then((response) => response.json())
     .then((data) => {
       const country = data.country;

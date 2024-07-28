@@ -475,6 +475,11 @@ section {
   align-self: flex-start;
   text-align: left;
 }
+.faq-question-and-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
 .faq-question {
   font-size: 0.9rem;
   line-height: 1.4;
