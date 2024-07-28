@@ -134,11 +134,11 @@ nav ul li:hover {
 }
 .action-button:hover {
   background-color: var(--theme-color-light);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.1s ease;
 }
 .outline-button:hover {
   background-color: var(--theme-color-ultra-light);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.1s ease;
 }
 .outline-button {
   border-color: var(--theme-color-bold);
