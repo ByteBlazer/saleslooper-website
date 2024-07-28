@@ -31,7 +31,7 @@ function scrollToVideo() {
     const videoHeadingTop =
       videoHeadingElement.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
-      top: videoHeadingTop - 75,
+      top: videoHeadingTop - 80,
       behavior: "smooth",
     });
   } else {
