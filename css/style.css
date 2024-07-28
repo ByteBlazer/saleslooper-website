@@ -43,38 +43,6 @@ body {
   overflow: hidden;
 }
 
-/* Development CSS - Start */
-main,
-section,
-article {
-  border: 1px solid darkgreen; /* Adjust the color and width as needed */
-}
-div {
-  border: 1px solid red; /* Adjust the color and width as needed */
-}
-h1,
-h2,
-h3,
-p {
-  border: 1px solid purple; /* Adjust the color and width as needed */
-}
-section,
-article,
-h1,
-h2,
-h3,
-p {
-  border: none;
-}
-main {
-  border: none;
-}
-div {
-  border: none;
-}
-
-/* Development CSS - End */
-
 header {
   z-index: 100;
   width: 100%;
@@ -103,12 +71,7 @@ header {
   align-items: center;
   gap: 0.5vw;
 }
-.nav-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+
 .icon-container,
 .text-logo-container {
   display: flex;
@@ -127,6 +90,12 @@ nav ul {
   justify-content: center;
   align-items: center;
   gap: 2vw;
+}
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 nav ul li {
   cursor: pointer;
