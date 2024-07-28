@@ -119,7 +119,8 @@ function handleCountrySpecificLogic(country) {
     if (country === "IN") {
       element.textContent = element.textContent;
     } else {
-      element.textContent = Math.round(element.textContent / 80);
+      // Convert to dollar, but double it
+      element.textContent = Math.round(element.textContent / 40);
     }
   });
 }
