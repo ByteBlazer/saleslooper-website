@@ -87,7 +87,41 @@ document.addEventListener("visibilitychange", function () {
   }
 });
 
+// Function to get country using IP Geolocation
+function getCountryFromIP() {
+  fetch("https://ipinfo.io/json?token=efd71ebb4072bd")
+    .then((response) => response.json())
+    .then((data) => {
+      const country = data.country;
+      console.log("User's Country from IP:", country);
+      handleCountrySpecificLogic(country);
+    })
+    .catch((error) => console.error("Error fetching country from IP:", error));
+}
+
+// Function to handle country-specific logic
+function handleCountrySpecificLogic(country) {
+  const currencyElements = document.querySelectorAll(".currency-symbol");
+  currencyElements.forEach((element) => {
+    if (country === "IN") {
+      element.textContent = "₹";
+    } else {
+      element.textContent = "$";
+    }
+  });
+  const currencyAmountElements = document.querySelectorAll(".currency-amount");
+  currencyAmountElements.forEach((element) => {
+    if (country === "IN") {
+      element.textContent = element.textContent;
+    } else {
+      element.textContent = Math.round(element.textContent / 80);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  getCountryFromIP();
+
   // Load the IFrame Player API code asynchronously
   const tag = document.createElement("script");
   tag.src = "https://www.youtube.com/iframe_api";

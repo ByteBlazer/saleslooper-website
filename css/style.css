@@ -15,6 +15,7 @@
   --body-max-width: 1240px;
   --rounded-button-border-radius: 7px;
   --modal-window-border-radius: 10px;
+  --pricing-plan-border-radius: 10px;
   --banner-image-border-radius: 12px;
   --modal-window-max-width: 350px;
 }
@@ -176,11 +177,15 @@ nav ul li:hover {
 .header-demo-booking-button {
   display: none;
 }
+.pricing-demo-booking-button {
+  padding: 0.9rem 0.3rem;
+  font-size: 0.9rem;
+}
+
 .banner-demo-booking-button,
 .banner-watch-video-button {
   max-width: 17rem;
   padding: 0.9rem 3.5rem;
-  border-radius: var(--rounded-button-border-radius);
   font-size: 1rem;
 }
 .banner-watch-video-button:before {
@@ -354,9 +359,111 @@ section {
   align-items: center;
   font-size: 1.2rem;
   line-height: 2;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-nav);
   text-align: center;
+}
+
+#pricing-section {
+  padding-top: 6vw;
+  background-color: var(--background-light-shade);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing-section-inner-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5vw;
+  width: 100%;
+  max-width: var(--body-max-width);
+}
+.pricing-plan {
+  width: 450px;
+  background-color: white;
+  border-radius: var(--pricing-plan-border-radius);
+  border: 1px solid var(--theme-color-ultra-light);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  padding: 2vw;
+}
+.pricing-plan-outline {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1vw;
+  width: 100%;
+}
+.pricing-plan-name {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.pricing-plan-users {
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.pricing-plan-cost {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.special-price {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.pricing-plan-unit {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.pricing-plan-divider {
+  height: 100%;
+  width: 2px;
+  background-color: var(--theme-color-ultra-light);
+}
+.pricing-plan-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1vw;
+  width: 100%;
+  height: 100%;
+}
+.pricing-plan-feature-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.pricing-plan-feature-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5vw;
+}
+.pricing-plan-features {
+  text-align: left;
+  font-size: 0.8rem;
+}
+.pricing-plan-feature::before {
+  content: "✓";
+  color: var(--theme-color-bold);
+  margin-right: 0.5rem;
+  font-weight: 600;
 }
 
 /* Modal styles */
