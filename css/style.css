@@ -28,6 +28,7 @@
   text-decoration: none; /* Ensures text in links have no default decoration */
   -webkit-text-size-adjust: 100%; /* Prevents font size changes on mobile devices */
 }
+
 html {
   font-family: "Inter", sans-serif; /* Sets the base font family */
   font-size: 1rem; /* Sets the base font size for rem calculations */
@@ -93,6 +94,10 @@ nav ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+a {
+  text-decoration: none;
+  color: var(--text-nav);
 }
 nav ul li {
   cursor: pointer;
@@ -283,21 +288,20 @@ section {
 .banner-image-container img {
   width: 100%;
   height: auto;
-  animation: slideshow 12s cubic-bezier(0.19, 1, 0.22, 1) 2.5s infinite;
+  animation: slideshow 10s cubic-bezier(0.2, 1, 0.1, 1) 2.5s infinite;
 }
 @keyframes slideshow {
   0% {
     transform: translateX(0%);
   }
-  33% {
+  20% {
+    transform: translateX(0%);
+  }
+  60% {
     transform: translateX(-100%);
   }
-  66% {
-    transform: translateX(-200%);
-  }
-
   100% {
-    transform: translateX(0%);
+    transform: translateX(-200%);
   }
 }
 

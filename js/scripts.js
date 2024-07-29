@@ -31,11 +31,13 @@ function playVideo() {
 // Function to scroll to the video section
 function scrollToVideo() {
   const videoHeadingElement = document.getElementById("youtube-video-heading");
+  const header = document.querySelector("header");
+
   if (videoHeadingElement) {
     const videoHeadingTop =
       videoHeadingElement.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
-      top: videoHeadingTop - 80,
+      top: videoHeadingTop - header.offsetHeight,
       behavior: "smooth",
     });
   } else {
@@ -205,4 +207,22 @@ document.addEventListener("DOMContentLoaded", function () {
       openModal("demo-modal");
     };
   }
+  const pricingLink = document.getElementById("pricing-link");
+  const pricingSection = document.getElementById("pricing-section");
+  const header = document.querySelector("header");
+
+  pricingLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const headerHeight = header.offsetHeight;
+    const pricingSectionTop =
+      pricingSection.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight;
+
+    window.scrollTo({
+      top: pricingSectionTop,
+      behavior: "smooth",
+    });
+  });
 });
