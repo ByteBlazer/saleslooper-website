@@ -1,7 +1,18 @@
 // Function to toggle the hamburger menu icon to an "X" and vice versa
-function toggleHamburger(x) {
-  x.classList.toggle("change");
+const hamburger = document.querySelector(".hamburger");
+const popupMenu = document.getElementById("popup-menu");
+const pricingLink = document.getElementById("pricing-link");
+const pricingSection = document.getElementById("pricing-section");
+const pricingLinkPopup = document.getElementById("pricing-link-popup");
+
+function toggleHamburger() {
+  hamburger.classList.toggle("change");
 }
+
+hamburger.addEventListener("click", function () {
+  popupMenu.classList.toggle("show");
+  toggleHamburger();
+});
 
 let player; // YouTube player object
 let videoObserver; // Intersection observer for video auto-play
@@ -146,6 +157,9 @@ function closeModal(modalId) {
     console.error(`Modal with ID '${modalId}' not found.`);
   }
 }
+function hidePopupMenu() {
+  popupMenu.classList.remove("show"); // Hide the popup menu after click
+}
 
 // Event listener for DOM content loaded
 document.addEventListener("DOMContentLoaded", function () {
@@ -207,8 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
       openModal("demo-modal");
     };
   }
-  const pricingLink = document.getElementById("pricing-link");
-  const pricingSection = document.getElementById("pricing-section");
+
   const header = document.querySelector("header");
 
   pricingLink.addEventListener("click", function (event) {
@@ -224,5 +237,11 @@ document.addEventListener("DOMContentLoaded", function () {
       top: pricingSectionTop,
       behavior: "smooth",
     });
+  });
+
+  pricingLinkPopup.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    pricingLink.click(); // Simulate a click on the header pricing link
+    hidePopupMenu();
   });
 });
