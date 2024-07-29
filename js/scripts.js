@@ -125,23 +125,21 @@ function handleCountrySpecificLogic(country) {
   });
 }
 
-// Function to open a modal and disable scrolling
+// Function to open a modal
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.style.display = "flex";
-    document.body.classList.add("no-scroll");
   } else {
     console.error(`Modal with ID '${modalId}' not found.`);
   }
 }
 
-// Function to close a modal and enable scrolling
+// Function to close a modal
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.style.display = "none";
-    document.body.classList.remove("no-scroll");
   } else {
     console.error(`Modal with ID '${modalId}' not found.`);
   }

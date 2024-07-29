@@ -39,9 +39,6 @@ body {
   -webkit-font-smoothing: antialiased; /* Improves font smoothing on webkit browsers */
   list-style: none; /* Ensures lists have no default styles like bullets */
 }
-.no-scroll {
-  overflow: hidden;
-}
 
 header {
   z-index: 100;
