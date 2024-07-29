@@ -559,15 +559,15 @@ section {
   margin: 10px 0;
 }
 
-.phone-email-link {
+.phone-link,
+.email-link {
   display: flex;
   flex-direction: row;
   gap: 0.5vw;
   justify-content: center;
   align-items: center;
 }
-.phone-email-link p {
-  font-size: 1.15rem;
+.email-link p {
   text-decoration: underline;
 }
 
