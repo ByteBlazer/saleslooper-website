@@ -276,13 +276,29 @@ section {
   border-radius: var(--banner-image-border-radius);
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .banner-image-container img {
   width: 100%;
   height: auto;
+  animation: slideshow 12s cubic-bezier(0.19, 1, 0.22, 1) 2.5s infinite;
+}
+@keyframes slideshow {
+  0% {
+    transform: translateX(0%);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 #video-section {
