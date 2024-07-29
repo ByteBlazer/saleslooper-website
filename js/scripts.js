@@ -157,8 +157,9 @@ function closeModal(modalId) {
     console.error(`Modal with ID '${modalId}' not found.`);
   }
 }
-function hidePopupMenu() {
+function closePopupMenu() {
   popupMenu.classList.remove("show"); // Hide the popup menu after click
+  hamburger.classList.toggle("change");
 }
 
 // Event listener for DOM content loaded
