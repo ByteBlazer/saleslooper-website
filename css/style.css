@@ -191,7 +191,7 @@ header nav ul li:hover {
 /* Popup menu styling */
 .popup-menu {
   display: none;
-  position: absolute;
+  position: fixed;
   top: var(--header-height);
   right: 0;
   width: 100vw;
