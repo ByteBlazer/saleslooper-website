@@ -243,6 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
   pricingLinkPopup.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default link behavior
     pricingLink.click(); // Simulate a click on the header pricing link
-    hidePopupMenu();
+    closePopupMenu();
   });
 });
