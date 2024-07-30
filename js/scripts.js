@@ -4,6 +4,8 @@ const popupMenu = document.getElementById("popup-menu");
 const pricingLink = document.getElementById("pricing-link");
 const pricingSection = document.getElementById("pricing-section");
 const pricingLinkPopup = document.getElementById("pricing-link-popup");
+let promoVideo; // Local video element
+let videoObserver; // Intersection observer for video auto-play
 
 document.addEventListener("click", function (event) {
   closePopupMenu();
@@ -18,34 +20,18 @@ hamburger.addEventListener("click", function () {
   toggleHamburger();
 });
 
-let player; // YouTube player object
-let videoObserver; // Intersection observer for video auto-play
-const videoUrl = "https://www.youtube.com/embed/J6I0YVHO-hs?enablejsapi=1"; // YouTube video URL with API enabled
-
-// Function called when the YouTube IFrame API is ready
-function onYouTubeIframeAPIReady() {
-  const iframe = document.getElementById("youtube-video");
-  player = new YT.Player(iframe, {
-    events: {
-      onReady: function (event) {
-        setupObserver(); // Setup intersection observer when player is ready
-      },
-    },
-  });
-}
-
 // Function to play the video
 function playVideo() {
-  if (player) {
-    player.playVideo();
+  if (promoVideo) {
+    promoVideo.play();
   } else {
-    console.error("Player is not ready.");
+    console.error("Promo video element is not ready.");
   }
 }
 
 // Function to scroll to the video section
 function scrollToVideo() {
-  const videoHeadingElement = document.getElementById("youtube-video-heading");
+  const videoHeadingElement = document.getElementById("video-heading");
   const header = document.querySelector("header");
 
   if (videoHeadingElement) {
@@ -56,22 +42,18 @@ function scrollToVideo() {
       behavior: "smooth",
     });
   } else {
-    console.error("Element with ID 'youtube-video-heading' not found.");
+    console.error("Element with ID 'video-heading' not found.");
   }
 }
 
 // Function to unmute and play the video
 function unmuteAndPlayVideo() {
-  if (
-    player &&
-    typeof player.unMute === "function" &&
-    typeof player.playVideo === "function"
-  ) {
-    player.unMute();
-    player.seekTo(0);
-    player.playVideo();
+  if (promoVideo) {
+    promoVideo.muted = false;
+    promoVideo.currentTime = 0;
+    promoVideo.play();
   } else {
-    console.error("Player is not ready or unMute/playVideo is not defined.");
+    console.error("Promo video element is not ready.");
   }
 }
 
@@ -179,21 +161,17 @@ function closePopupMenu() {
 document.addEventListener("DOMContentLoaded", function () {
   getCountryFromIP();
 
-  // Load the IFrame Player API code asynchronously
-  const tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  const firstScriptTag = document.getElementsByTagName("script")[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  promoVideo = document.getElementById("promo-video");
 
   const closeCountryModalBtn = document.getElementById("close-country-modal");
 
   // Check if the modal has been shown before
   if (!localStorage.getItem("countryModalShown")) {
-    document.getElementById("youtube-video").src = videoUrl + "&mute=0";
+    promoVideo.muted = false;
     openModal("country-modal");
   } else {
     closeModal("country-modal");
-    document.getElementById("youtube-video").src = videoUrl + "&mute=1";
+    promoVideo.muted = true;
     setupObserver();
   }
 

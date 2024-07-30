@@ -1,5 +1,5 @@
 :root {
-  --theme-color-bold: #0d89ec;
+  --theme-color-bold: #0074d9;
   --theme-color-light: #2199f3;
   --theme-color-ultra-light: #cae6f7;
   --text-secondary: #202124;
@@ -133,7 +133,7 @@ header nav ul li:hover {
 .action-button {
   border: none;
   background-color: var(--theme-color-bold);
-  color: #fff;
+  color: white;
 }
 
 .outline-button {
@@ -375,7 +375,7 @@ section {
   overflow: hidden;
 }
 
-.video-container iframe {
+.video-container video {
   position: absolute;
   top: 0;
   left: 0;

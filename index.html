@@ -210,7 +210,7 @@
       </section>
       <section id="video-section">
         <div class="video-outer-wrapper">
-          <div class="video-titles" id="youtube-video-heading">
+          <div class="video-titles" id="video-heading">
             <p>
               A
               <span class="title-highlight non-breaking-title"
@@ -219,16 +219,18 @@
               solution that is light on finances, heavy on features.
             </p>
           </div>
-          <div class="video-container" id="youtube-video-container">
-            <iframe
-              id="youtube-video"
+          <div id="video-container" class="video-container">
+            <video
+              id="promo-video"
               width="560"
               height="315"
-              src=""
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media;gyroscope;picture-in-picture"
-              allowfullscreen
-            ></iframe>
+              controls
+              autoplay
+              muted
+            >
+              <source src="video/promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
