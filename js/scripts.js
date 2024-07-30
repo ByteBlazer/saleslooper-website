@@ -5,6 +5,10 @@ const pricingLink = document.getElementById("pricing-link");
 const pricingSection = document.getElementById("pricing-section");
 const pricingLinkPopup = document.getElementById("pricing-link-popup");
 
+document.addEventListener("click", function (event) {
+  closePopupMenu();
+});
+
 function toggleHamburger() {
   hamburger.classList.toggle("change");
 }
@@ -158,8 +162,17 @@ function closeModal(modalId) {
   }
 }
 function closePopupMenu() {
-  popupMenu.classList.remove("show"); // Hide the popup menu after click
-  hamburger.classList.toggle("change");
+  const isClickInsideMenu = popupMenu.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+
+  if (
+    !isClickInsideMenu &&
+    !isClickOnHamburger &&
+    popupMenu.classList.contains("show")
+  ) {
+    popupMenu.classList.remove("show"); // Hide the popup menu after click
+    hamburger.classList.toggle("change");
+  }
 }
 
 // Event listener for DOM content loaded
