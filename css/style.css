@@ -11,6 +11,7 @@
   --background-header: white;
   --text-gradient-start: #00c6ff;
   --text-gradient-end: #004aad;
+  --hamburger-menu-hover-background-color: #f0f0f0;
   --header-height: 60px;
   --body-max-width: 1240px;
   --rounded-button-border-radius: 7px;
@@ -198,7 +199,7 @@ header nav ul li:hover {
   max-width: 500px;
 
   background-color: var(--background-default);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   z-index: 9;
 }
 .popup-menu nav ul {
@@ -222,7 +223,7 @@ header nav ul li:hover {
 }
 .popup-menu nav ul li a:hover {
   color: var(--theme-color-bold);
-  background-color: var(--theme-color-ultra-light);
+  background-color: var(--hamburger-menu-hover-background-color);
 }
 .popup-menu.show {
   display: block;
