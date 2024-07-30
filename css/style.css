@@ -194,7 +194,7 @@ header nav ul li:hover {
   position: fixed;
   top: -100%;
   right: 0;
-  width: 100vw;
+  width: 100%;
   max-width: 500px;
   background-color: var(--background-default);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
