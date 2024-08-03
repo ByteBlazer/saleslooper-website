@@ -368,17 +368,20 @@ section {
   10% {
     transform: translateX(0%);
   }
-  30% {
+  20% {
     transform: translateX(-100%);
   }
-  50% {
+  40% {
     transform: translateX(-200%);
   }
-  70% {
+  60% {
     transform: translateX(-300%);
   }
-  100% {
+  80% {
     transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(-500%);
   }
 }
 
