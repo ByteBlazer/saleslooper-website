@@ -336,31 +336,8 @@ section {
 .banner-image-container img {
   width: 100%;
   height: auto;
-  animation: slideshow 15s cubic-bezier(0.2, 1, 0.1, 1) 2.5s infinite;
+  animation: slideshow 35s cubic-bezier(0.2, 1, 0.1, 1) 2.5s infinite;
 }
-/* @keyframes slideshow {
-  0% {
-    transform: translateX(0%);
-  }
-  10% {
-    transform: translateX(0%);
-  }
-  30% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(-200%);
-  }
-  70% {
-    transform: translateX(-300%);
-  }
-  90% {
-    transform: translateX(-400%);
-  }
-  100% {
-    transform: translateX(-500%);
-  }
-} */
 @keyframes slideshow {
   0% {
     transform: translateX(0%);
@@ -371,17 +348,29 @@ section {
   20% {
     transform: translateX(-100%);
   }
-  40% {
+  30% {
     transform: translateX(-200%);
   }
-  60% {
+  40% {
     transform: translateX(-300%);
   }
-  80% {
+  50% {
     transform: translateX(-400%);
   }
-  100% {
+  60% {
     transform: translateX(-500%);
+  }
+  70% {
+    transform: translateX(-600%);
+  }
+  80% {
+    transform: translateX(-700%);
+  }
+  90% {
+    transform: translateX(-800%);
+  }
+  100% {
+    transform: translateX(-900%);
   }
 }
 
