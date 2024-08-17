@@ -679,7 +679,7 @@ section {
 .feature-heading {
   text-align: left;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .feature-point-list {
   display: flex;
