@@ -664,6 +664,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding-top: 4vh;
   padding-bottom: 4vh;
   border-top: 2px solid var(--background-light-shade);
