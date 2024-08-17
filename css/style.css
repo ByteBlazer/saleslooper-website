@@ -647,6 +647,11 @@ section {
   width: 100%;
   max-width: var(--body-max-width);
 }
+.features-main-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 4vh;
+}
 
 .features-list {
   display: flex;
@@ -684,12 +689,12 @@ section {
 .feature-point {
   text-align: left;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 .feature-point:before {
   content: url(/img/tick-mark-inside-blue-circle.svg);
-  margin-right: 1.2rem;
+  margin-right: 1vh;
   height: 22px;
   width: 22px;
 }
@@ -795,5 +800,9 @@ section {
   }
   .feature:nth-child(even) {
     flex-direction: row;
+  }
+  .feature-point {
+    text-align: left;
+    font-size: 1.1rem;
   }
 }
