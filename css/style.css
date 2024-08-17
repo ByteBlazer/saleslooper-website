@@ -692,8 +692,8 @@ section {
 .feature-point {
   text-align: left;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.75;
 }
 .feature-point:before {
   content: url(/img/tick-mark-inside-blue-circle.svg);
