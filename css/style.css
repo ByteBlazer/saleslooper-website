@@ -640,6 +640,78 @@ section {
   text-decoration: underline;
 }
 
+.features-section-inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--body-max-width);
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2vh;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  border-top: 2px solid var(--background-light-shade);
+}
+.feature-description {
+  margin-left: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3vh;
+}
+.feature-heading {
+  text-align: left;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.feature-point-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+.feature-point {
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.feature-point:before {
+  content: url(/img/tick-mark-inside-blue-circle.svg);
+  margin-right: 1.2rem;
+  height: 22px;
+  width: 22px;
+}
+
+.feature-image-container {
+  width: 80vw;
+  max-width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.feature-image-container img {
+  width: 100%;
+  height: auto;
+}
+.feature-divider {
+  height: 2px;
+  width: 100%;
+  background-color: red;
+}
+
 @media (min-width: 576px) {
   .title-highlight {
     white-space: nowrap;
@@ -717,5 +789,11 @@ section {
   .outline-button:hover {
     background-color: var(--theme-color-ultra-light);
     transition: background-color 0.3s ease;
+  }
+  .feature:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .feature:nth-child(even) {
+    flex-direction: row;
   }
 }
