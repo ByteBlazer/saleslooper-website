@@ -677,7 +677,9 @@ section {
   gap: 3vh;
 }
 .feature-heading {
-  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
   font-weight: 600;
   font-size: 1.5rem;
 }
