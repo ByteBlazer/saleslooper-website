@@ -804,6 +804,9 @@ section {
   .feature:nth-child(even) {
     flex-direction: row;
   }
+  .feature-point-list {
+    padding-bottom: 10vh;
+  }
   .feature-point {
     text-align: left;
     font-size: 1.1rem;
