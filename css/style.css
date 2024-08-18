@@ -727,12 +727,8 @@ section {
   justify-content: center;
   align-items: center;
 }
-.clients-section-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  padding-bottom: 4vh;
-}
-
+.clients-section-title,
+.client-testimonials-title,
 .tech-partners-title {
   font-size: 1.8rem;
   font-weight: 600;
@@ -785,7 +781,7 @@ section {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2vh;
+  gap: 3vh;
 }
 
 .partner-logos-container img {
@@ -847,9 +843,6 @@ section {
   .clients-section-description {
     font-size: 1.2rem;
   }
-  .partner-logos-container {
-    width: 40vw;
-  }
 }
 @media (min-width: 1200px) {
   header nav ul li {
@@ -899,5 +892,8 @@ section {
   .feature-point {
     text-align: left;
     font-size: 1.1rem;
+  }
+  .partner-logos-container {
+    width: 40vw;
   }
 }
