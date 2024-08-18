@@ -720,6 +720,57 @@ section {
   background-color: red;
 }
 
+#clients-section {
+  padding-top: 6vh;
+  background-color: var(--background-light-shade);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clients-section-title,
+.tech-partners-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 4vh;
+}
+.clients-section-description {
+  font-size: 0.95rem;
+  font-weight: 450;
+  line-height: 1.7;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  padding-bottom: 4vh;
+  max-width: var(--body-max-width);
+}
+
+.client-logos-container {
+  width: 80vw;
+  max-width: var(--body-max-width);
+  height: 15vh;
+
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10vh;
+}
+
+.client-logos-container img {
+  padding: 1.5vh;
+  height: 100%;
+  width: auto;
+  animation: scrollLogos 20s linear infinite;
+}
+@keyframes scrollLogos {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-2500%);
+  }
+}
+
 @media (min-width: 576px) {
   .title-highlight {
     white-space: nowrap;
@@ -760,6 +811,9 @@ section {
   .video-titles {
     font-size: 1.8rem;
     line-height: 2;
+  }
+  .clients-section-description {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 1200px) {
