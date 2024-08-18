@@ -777,7 +777,7 @@ section {
 }
 
 .partner-logos-container {
-  width: 40vw;
+  width: 80vw;
   max-width: var(--body-max-width);
   height: 12vh;
   background-color: white;
@@ -846,6 +846,9 @@ section {
   }
   .clients-section-description {
     font-size: 1.2rem;
+  }
+  .partner-logos-container {
+    width: 40vw;
   }
 }
 @media (min-width: 1200px) {
