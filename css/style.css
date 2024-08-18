@@ -758,7 +758,7 @@ section {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 5vh;
+  gap: 3vh;
 }
 
 .client-logos-container img {
@@ -785,7 +785,7 @@ section {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 5vh;
+  gap: 2vh;
 }
 
 .partner-logos-container img {
