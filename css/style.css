@@ -435,8 +435,9 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 2.5vw;
+  gap: 2.5vh;
   width: 100%;
+  padding: 1.5vh;
   max-width: var(--body-max-width);
 }
 .pricing-plan {
