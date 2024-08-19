@@ -821,10 +821,10 @@ section {
 .testimonial-image-container {
   position: absolute;
   top: 0%;
-  left: 25%;
+  left: 22%;
   transform: translate(-50%, -50%);
-  width: 18vh;
-  height: 18vh;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   border-radius: 50%;
   border: 5px solid white;
@@ -836,7 +836,6 @@ section {
   width: 100%;
 }
 .testimonial-content {
-  font-style: italic;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -844,6 +843,7 @@ section {
   width: 100%;
 }
 .testimonial-statement {
+  font-style: italic;
   padding: 2vh;
   font-size: 0.9rem;
   line-height: 1.7;
@@ -865,15 +865,15 @@ section {
 }
 .testimonial-person-name {
   font-weight: 550;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 .testimonial-person-designation {
   font-weight: 450;
-  font-size: 0.67em;
+  font-size: 0.6em;
 }
 
 .testimonial-logo img {
-  width: 55px;
+  width: 45px;
   height: auto;
 }
 
@@ -920,6 +920,13 @@ section {
   }
   .clients-section-description {
     font-size: 1.2rem;
+  }
+  .testimonial-image-container {
+    width: 140px;
+    height: 140px;
+  }
+  .testimonial-author {
+    justify-content: center;
   }
 }
 @media (min-width: 1200px) {
