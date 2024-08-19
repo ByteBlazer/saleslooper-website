@@ -714,11 +714,6 @@ section {
   width: 100%;
   height: auto;
 }
-.feature-divider {
-  height: 2px;
-  width: 100%;
-  background-color: red;
-}
 
 #clients-section {
   padding-top: 6vh;
@@ -732,7 +727,14 @@ section {
 .tech-partners-title {
   font-size: 1.8rem;
   font-weight: 600;
-  padding: 4vh;
+  padding-bottom: 4vh;
+}
+.client-section-divider {
+  margin: 6vh;
+  height: 1px;
+  width: 100%;
+  max-width: var(--body-max-width);
+  background-color: lightgrey;
 }
 
 .clients-section-description {
@@ -875,6 +877,11 @@ section {
 .testimonial-logo img {
   width: 45px;
   height: auto;
+}
+.company-section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 4vh;
 }
 
 @media (min-width: 576px) {
