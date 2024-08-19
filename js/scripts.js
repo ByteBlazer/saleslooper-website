@@ -4,6 +4,10 @@ const popupMenu = document.getElementById("popup-menu");
 const pricingLink = document.getElementById("pricing-link");
 const pricingSection = document.getElementById("pricing-section");
 const pricingLinkPopup = document.getElementById("pricing-link-popup");
+const clientsLink = document.getElementById("clients-link");
+const clientsSection = document.getElementById("clients-section");
+const clientsLinkPopup = document.getElementById("clients-link-popup");
+
 let promoVideo; // Local video element
 let videoObserver; // Intersection observer for video auto-play
 
@@ -231,8 +235,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  pricingLinkPopup.addEventListener("click", function (event) {
+  clientsLinkPopup.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default link behavior
-    pricingLink.click(); // Simulate a click on the header pricing link
+    clientsLink.click(); // Simulate a click on the header link
+  });
+  clientsLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const headerHeight = header.offsetHeight;
+    const clientsSectionTop =
+      clientsSection.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight;
+
+    window.scrollTo({
+      top: clientsSectionTop,
+      behavior: "smooth",
+    });
+  });
+
+  clientsLinkPopup.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    clientsLink.click(); // Simulate a click on the header link
   });
 });
