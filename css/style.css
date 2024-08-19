@@ -802,7 +802,9 @@ section {
 .client-testimonial-list {
   padding-top: 6vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2vh;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -819,10 +821,10 @@ section {
 .testimonial-image-container {
   position: absolute;
   top: 0%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
-  width: 16vh;
-  height: 16vh;
+  width: 18vh;
+  height: 18vh;
   overflow: hidden;
   border-radius: 50%;
   border: 5px solid white;
@@ -842,17 +844,17 @@ section {
   width: 100%;
 }
 .testimonial-statement {
-  padding: 0 2vh 0 2vh;
-  padding-top: 8vh;
+  padding: 2vh;
   font-size: 0.9rem;
   line-height: 1.7;
 }
 
 .testimonial-author {
-  padding: 1vh 2vh 2vh 2vh;
+  padding: 1vh 2vh 1vh 2vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 1vh;
   width: 100%;
 }
 .testimonial-person {
