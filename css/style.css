@@ -785,6 +785,7 @@ section {
   justify-content: flex-start;
   align-items: center;
   gap: 3vh;
+  margin-bottom: 4vh;
 }
 
 .partner-logos-container img {
