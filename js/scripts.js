@@ -7,6 +7,12 @@ const pricingLinkPopup = document.getElementById("pricing-link-popup");
 const clientsLink = document.getElementById("clients-link");
 const clientsSection = document.getElementById("clients-section");
 const clientsLinkPopup = document.getElementById("clients-link-popup");
+const featuresLink = document.getElementById("features-link");
+const featuresSection = document.getElementById("features-section");
+const featuresLinkPopup = document.getElementById("features-link-popup");
+const companyLink = document.getElementById("company-link");
+const companySection = document.getElementById("company-section");
+const companyLinkPopup = document.getElementById("company-link-popup");
 
 let promoVideo; // Local video element
 let videoObserver; // Intersection observer for video auto-play
@@ -235,10 +241,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  clientsLinkPopup.addEventListener("click", function (event) {
+  pricingLinkPopup.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default link behavior
-    clientsLink.click(); // Simulate a click on the header link
+    pricingLink.click(); // Simulate a click on the header link
   });
+
   clientsLink.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default link behavior
 
@@ -257,5 +264,45 @@ document.addEventListener("DOMContentLoaded", function () {
   clientsLinkPopup.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default link behavior
     clientsLink.click(); // Simulate a click on the header link
+  });
+
+  featuresLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const headerHeight = header.offsetHeight;
+    const featuresSectionTop =
+      featuresSection.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight;
+
+    window.scrollTo({
+      top: featuresSectionTop,
+      behavior: "smooth",
+    });
+  });
+
+  featuresLinkPopup.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    featuresLink.click(); // Simulate a click on the header link
+  });
+
+  companyLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const headerHeight = header.offsetHeight;
+    const companySectionTop =
+      companySection.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight;
+
+    window.scrollTo({
+      top: companySectionTop,
+      behavior: "smooth",
+    });
+  });
+
+  companyLinkPopup.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    companyLink.click(); // Simulate a click on the header link
   });
 });
