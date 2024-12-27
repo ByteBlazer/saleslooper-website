@@ -891,6 +891,11 @@ section {
   max-width: 300px;
   height: auto;
 }
+.deltasoft-logo-container img {
+  width: 20vh;
+  max-width: 300px;
+  height: auto;
+}
 
 @media (min-width: 576px) {
   .title-highlight {
