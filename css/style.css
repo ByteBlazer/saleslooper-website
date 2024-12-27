@@ -886,6 +886,12 @@ section {
   font-weight: 600;
   padding-bottom: 4vh;
 }
+.deltasoft-section-title {
+  padding: 3vh;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 4vh;
+}
 .company-logo-container img {
   width: 20vh;
   max-width: 300px;
