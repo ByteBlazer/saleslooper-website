@@ -129,7 +129,7 @@ function handleCountrySpecificLogic(country) {
       element.textContent = element.textContent;
     } else {
       // Convert to dollar, but double it
-      element.textContent = Math.round(element.textContent / 40);
+      element.textContent = Math.round(element.textContent / 53);
     }
   });
 }
